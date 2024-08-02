@@ -1,5 +1,5 @@
 /// <reference types="Cypress" />
-describe('Sampke Cypress test', () => {
+describe('add to cart test', () => {
     it('add to cart', () => {
         cy.visit('https://rahulshettyacademy.com/seleniumPractise/#/')
         cy.get('.search-keyword').type('CA')
@@ -16,11 +16,14 @@ describe('Sampke Cypress test', () => {
             }
         })
 
+        // verify logo text with non-cypress .text() method
         cy.get('.greenLogo').should('have.text', 'GREENKART')
         cy.get('.greenLogo').then(function(logoEl){
             const logoText = logoEl.text()
             cy.log('logoText:' + logoText)
         })
+
+        
     })
 
     it('do checkout', () =>{
@@ -45,3 +48,6 @@ describe('Sampke Cypress test', () => {
 
     })
 })
+
+
+
