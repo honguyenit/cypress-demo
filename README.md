@@ -3,6 +3,8 @@
 - Clone the project
 - Run the command to install all dependences
 ```npm install```
+- Install `cypress-iframe` to work with iframe (optional)
+```npm install -D cypress-iframe```
 
 ## Run Cypress
 
