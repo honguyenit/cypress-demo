@@ -8,19 +8,19 @@
 
 ## Run Cypress
 
-- Run cypress
-```npx cypress open```
+- Open cypress runner
+    - ```npx cypress open```
 
-- Run with headless mode
-```npx cypress run --headless```
+- Run with headless/non-headless mode
+    - ```npx cypress run --headless```
+    - ```npx cypress run --headed```
 
-- Run with non-headless mode
-```npx cypress run --headed```
+- Run with different browsers 
+    - ```npx cypress run --headed --browser  firefox```
+    - ```npx cypress run --headed --browser  chrome```
 
-- Run a with non-headless mode in firefox 
-```npx cypress run --headed --browser  firefox```
+- Run cypress with specific test
+    - ```npx cypress run --headed --spec cypress/integration/examples/sample.js```
 
-- Run cypress with specific test in nonheadless mode
-```npx cypress run --headed --spec cypress/integration/examples/doCheckout.js```
-
-
+- Run cypress with specific env, spec, browser, nonheadless mode
+    - ```npx cypress run  --browser chrome  --headed --spec cypress/integration/advancedExamples/homepageTests.js --env baseURL="https://13.201.9.53"```

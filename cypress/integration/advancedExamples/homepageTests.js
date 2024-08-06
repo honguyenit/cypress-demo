@@ -21,7 +21,7 @@ describe('Advanced features test', () => {
     it('add to cart test', function() {
         
         // visit home page
-        cy.visit("https://rahulshettyacademy.com/angularpractice")
+        cy.visit(Cypress.env('baseURL') + "/angularpractice")
         homePage.getNameInputEl().type(this.testdata.name)
         homePage.getGenderDropdownEl().select(this.testdata.gender)
 
