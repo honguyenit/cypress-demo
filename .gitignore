@@ -28,4 +28,5 @@ node_modules
 cypress/videos
 cypress/screenshots
 cypress/reports
+cypress/downloads
 js/*.js

@@ -6,6 +6,7 @@ async function setupNodeEvents(on, config) {
   require('cypress-mochawesome-reporter/plugin')(on);
   await addCucumberPreprocessorPlugin(on, config);
   on("file:preprocessor", preprocessor(config));
+  return config;
 }
 module.exports = defineConfig({
   projectId: "phxodt",
@@ -22,6 +23,7 @@ module.exports = defineConfig({
     //   on("file:preprocessor", preprocessor(config));
     // },
     setupNodeEvents,
+    // specPattern: '**/*.feature',
     specPattern: ['**/*.feature', 'cypress/integration/*/*.js'],
     env: {
       baseURL: '13.201.9.53'
