@@ -7,7 +7,7 @@
 ```npm install -D cypress-iframe```
 
 ## Run Cypress
-
+### Run Cypress on local
 - Open cypress runner
     - ```npx cypress open```
 
@@ -23,4 +23,9 @@
     - ```npx cypress run --headed --spec cypress/integration/examples/sample.js```
 
 - Run cypress with specific env, spec, browser, nonheadless mode
-    - ```npx cypress run  --browser chrome  --headed --spec cypress/integration/advancedExamples/homepageTests.js --env baseURL="https://13.201.9.53"```
+    - ```npx cypress run --browser chrome --headed --spec cypress/integration/advancedExamples/homepageTests.js --env baseURL="https://13.201.9.53"```
+    - ```npx cypress run --browser chrome --headed --spec cypress/integration/examples/*.js --env url="https://13.201.9.53"```
+
+### Run Cypress and upload to Cypress Dashboard cloud
+- Command
+    - ```npx cypress run  --browser chrome   --spec cypress/integration/examples/*.js  --env url="https://13.201.9.53" --headed --record --key {record-key}```
