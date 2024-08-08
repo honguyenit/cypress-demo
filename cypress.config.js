@@ -3,9 +3,9 @@ const {addCucumberPreprocessorPlugin} = require("@badeball/cypress-cucumber-prep
 const {preprocessor} = require("@badeball/cypress-cucumber-preprocessor/browserify");
 
 async function setupNodeEvents(on, config) {
-  require('cypress-mochawesome-reporter/plugin')(on);
-  await addCucumberPreprocessorPlugin(on, config);
-  on("file:preprocessor", preprocessor(config));
+  require('cypress-mochawesome-reporter/plugin')(on); // for mochawesome report
+  await addCucumberPreprocessorPlugin(on, config); // for cucumber
+  on("file:preprocessor", preprocessor(config)); // for cucumber
   return config;
 }
 module.exports = defineConfig({
@@ -17,14 +17,9 @@ module.exports = defineConfig({
     videoOnFailOnly:true,
   },
   e2e: {
-    // setupNodeEvents(on, config) {
-    //   require('cypress-mochawesome-reporter/plugin')(on);
-    //   await addCucumberPreprocessorPlugin(on, config);
-    //   on("file:preprocessor", preprocessor(config));
-    // },
     setupNodeEvents,
-    // specPattern: '**/*.feature',
-    specPattern: ['**/*.feature', 'cypress/integration/*/*.js'],
+    specPattern: '**/*.feature', // for cumcumber tests
+    // specPattern: 'cypress/integration/*/*.js', // for normal tests
     env: {
       baseURL: '13.201.9.53'
     },
@@ -32,7 +27,6 @@ module.exports = defineConfig({
       runMode: 1, // Configure retry attempts for `cypress run`
       openMode: 2, // Configure retry attempts for `cypress open`
       },
-    // specPattern: 'cypress/integration/*/*.js',
     screenshotsFolder: 'cypress/screenshots',
     video: true,
     videoCompression: true,

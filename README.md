@@ -35,6 +35,13 @@
 - Command
     - `npx cypress run  --browser chrome   --spec cypress/integration/examples/*.js  --env url="https://13.201.9.53" --headed --record --key {record-key}`
 
-## Run Cypress Cucumber
+### Run Cypress Cucumber and Generate Cucumber reports
+- Run cucumber tests
+    - `npx cypress run  --browser chrome   --spec cypress/integration/BDD/shoppingTest.feature --headed`
+    - `npx cypress run --browser chrome --env tags="@smoke"  --headed`
+    
+    Note that a results.json will be generated after executing tests
 
-- `npx cypress run  --browser chrome   --spec cypress/integration/BDD/shoppingTest.feature --headed`
+- Generate cucumber report (after running cucumber tests)
+    From the root folder, execute the command: 
+    - `node cucumber-html-reporter.js`

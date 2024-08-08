@@ -3,6 +3,10 @@ class HomePage{
         return cy.get('form [name="name"]:nth-child(2)')
     }
 
+    getEmailnputEl(){
+        return cy.get('input[name="email"]')
+    }
+
     getGenderDropdownEl(){
         return cy.get('#exampleFormControlSelect1')
     }

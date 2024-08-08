@@ -14,6 +14,15 @@
     "test-dashboard-pom-dashboard": "npx cypress run --browser chrome --spec cypress/integration/advancedExamples/*.js --headless --record --key $record_key",
     "test-dashboard-examples-dashboard": "npx cypress run --browser chrome --spec cypress/integration/examples/*.js --headless --record --key $record_key"
   },
+  "cypress-cucumber-preprocessor": {
+    "stepDefinitions": [
+      "cypress/integration/BDD/step_definitions/*.js"
+    ],
+    "json": {
+      "enabled": true,
+      "output": "cypress/cucumberReports/results.json"
+    }
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/honguyenit/cypress-demo.git"
@@ -28,7 +37,8 @@
     "@cypress/browserify-preprocessor": "^3.0.2",
     "cypress": "^13.6.4",
     "cypress-iframe": "^1.0.1",
-    "cypress-mochawesome-reporter": "^3.8.2"
+    "cypress-mochawesome-reporter": "^3.8.2",
+    "multiple-cucumber-html-reporter": "^3.7.0"
   },
   "dependencies": {
     "@badeball/cypress-cucumber-preprocessor": "^20.1.1"
