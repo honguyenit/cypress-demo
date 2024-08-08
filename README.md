@@ -37,7 +37,7 @@
 
 ### Run Cypress Cucumber and Generate Cucumber reports
 - Run cucumber tests
-    - `npx cypress run  --browser chrome   --spec cypress/integration/BDD/shoppingTest.feature --headed`
+    - `npx cypress run  --browser chrome   --spec cypress/integration/BDD/features/shoppingTest.feature --headed`
     - `npx cypress run --browser chrome --env tags="@smoke"  --headed`
     
     Note that a results.json will be generated after executing tests

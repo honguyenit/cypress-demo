@@ -18,8 +18,9 @@ module.exports = defineConfig({
   },
   e2e: {
     setupNodeEvents,
-    specPattern: '**/*.feature', // for cumcumber tests
+    // specPattern: '**/*.feature', // for cumcumber tests
     // specPattern: 'cypress/integration/*/*.js', // for normal tests
+    specPattern: ['**/*.feature','cypress/integration/*/*.js'], // for both normal and Cucumber tests
     env: {
       baseURL: '13.201.9.53'
     },

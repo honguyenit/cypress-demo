@@ -19,6 +19,12 @@ When('I add items to Cart', function(dataTable) {
     });
 })
 
+When('I add more items from testdata to Cart', function() {  
+    this.testdata.selectProducts.forEach(function(productName){
+        cy.selectProductByName(productName)
+    })
+})
+
 When('I go to the shopping cart page', ()=>{
     productPage.getShoppingCartButtonEl().click()
 })
