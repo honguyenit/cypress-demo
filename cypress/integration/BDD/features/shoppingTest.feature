@@ -1,8 +1,10 @@
 Feature: Shopping Feature
 
+Background: Open the home page
+    Given I open the home page
+
 @smoke
 Scenario: I do Shopping
-    Given I open the home page
     Given I select the shopping page menu
     When I add items to Cart
     |productName    |
@@ -15,14 +17,12 @@ Scenario: I do Shopping
 
 @regression
 Scenario: Filling the form
-    Given I open the home page
     When I fill in the form with name "Bob" and gender "Male"
     Then I should see the binding input shows the name "Bob"
     Then I validate the forms
 
 @smoke
 Scenario Outline: Register accounts
-    Given I open the home page
     When I fill in the form with name <name> and email <email>
     Then I should see the form shows name <name> and email <email>
 
