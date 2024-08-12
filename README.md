@@ -3,37 +3,38 @@
 - Clone the project
 - Run the command to install all dependences
 `npm install`
-- Install `cypress-iframe` to work with iframe (optional)
-`npm install -D cypress-iframe`
+- FYI, (no need to execute as npm install will solve dêpndencies):
+    - `npm install cypress typescript --save-dev`
+    - `npm install @badeball/cypress-cucumber-preprocessor @bahmutov/cypress-esbuild-preprocessor --save-dev`
+
+## important note before running the tests
+Note that with Cypress Typescript, currently, `cypress-mochawesome-reporter` and `cypress-cucumber-preprocessor` are not compatible, so we need to disabled either one of them to run tests.
+
+- For typescript normal tests: Use `cypress.config.ts_mochawesome_bk`
+- For cucumber tests: Use `cypress.config.ts_cucumber_bk`
 
 ## Run Cypress
 ### Run Cypress on local
 - Open cypress runner
     - `npx cypress open`
 
-- Run with headless/non-headless mode
+- Run with headless/non-headless mode with different browsers
     - `npx cypress run --headless`
     - `npx cypress run --headed`
-
-- Run with different browsers
     - `npx cypress run --headed --browser  firefox`
     - `npx cypress run --headed --browser  chrome`
 
-- Run cypress with specific test
-    - `npx cypress run --headed --spec cypress/integration/examples/sample.js`
-
-- Run cypress with specific env, spec, browser, nonheadless mode
-    - `npx cypress run --browser chrome --headed --spec cypress/integration/advancedExamples/homepageTests.js --env baseURL="https://13.201.9.53"`
-    - `npx cypress run --browser chrome --headed --spec cypress/integration/examples/*.js --env url="https://13.201.9.53"`
+- Run cypress typescript with specific test (*)
+    - `npx cypress run --browser chrome --headed --spec cypress/integration/*/*.ts --env baseURL="https://13.201.9.53"`
 
 ### Run through scripts
-- `npm run test-chrome`
-- `npm run test-firefox`
-- `npm run test-examples`
-- `npm run test-pom`
+- `npm run test-ts-examples`
+- `npm run test-dashboard-samples`
+- `npm run test-cucumber`
+
 ### Run Cypress and upload to Cypress Dashboard cloud
 - Command
-    - `npx cypress run  --browser chrome   --spec cypress/integration/examples/*.js  --env url="https://13.201.9.53" --headed --record --key {record-key}`
+    - `npx cypress run  --browser chrome   --spec cypress/integration/*/*.ts  --env url="https://13.201.9.53" --headed --record --key {record-key}`
 
 ### Run Cypress Cucumber and Generate Cucumber reports
 - Run cucumber tests

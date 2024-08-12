@@ -4,14 +4,14 @@ import { addCucumberPreprocessorPlugin } from '@badeball/cypress-cucumber-prepro
 import createEsbuildPlugin from '@badeball/cypress-cucumber-preprocessor/esbuild';
 
 async function setupNodeEvents(on, config) {
-  require('cypress-mochawesome-reporter/plugin')(on); // for mochawesome report, not compatable with cucumber-report
+  // require('cypress-mochawesome-reporter/plugin')(on); // for mochawesome report, not compatable with cucumber-report
 
-  // const bundler = createBundler({
-  //   plugins: [createEsbuildPlugin(config)], // for cucumber tests, does not compatable with mochawesome-report
-  // });
+  const bundler = createBundler({
+    plugins: [createEsbuildPlugin(config)], // for cucumber tests, does not compatable with mochawesome-report
+  });
 
-  // on('file:preprocessor', bundler);
-  // await addCucumberPreprocessorPlugin(on, config); // for cucumber tests, does not compatable with mochawesome-report
+  on('file:preprocessor', bundler);
+  await addCucumberPreprocessorPlugin(on, config); // for cucumber tests, does not compatable with mochawesome-report
 
 
   return config;
@@ -19,8 +19,8 @@ async function setupNodeEvents(on, config) {
 module.exports = defineConfig({
   e2e: {
     setupNodeEvents,
-    // specPattern: '**/*.feature', // for cumcumber tests (with cucumber report))
-    specPattern: 'cypress/integration/*/*.ts', // for typescript normal tests (with mochawesome report)
+    specPattern: '**/*.feature', // for cumcumber tests (with cucumber report))
+    // specPattern: 'cypress/integration/*/*.ts', // for typescript normal tests (with mochawesome report)
     env: {
       baseURL: '13.201.9.53'
     },

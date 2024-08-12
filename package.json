@@ -8,11 +8,9 @@
     "test-headed": "npx cypress run --headed",
     "test-chrome": "npx cypress run --headed --browser  chrome",
     "test-firefox": "npx cypress run --headed --browser  firefox",
-    "test-pom": "npx cypress run --headless --spec cypress/integration/advancedExamples/*.js",
-    "test-examples": "npx cypress run --headless --spec cypress/integration/examples/*.js",
-    "test-dashboard-samples": "npx cypress run --browser chrome --spec cypress/integration/examples/sample.js --headless --record --key $record_key",
-    "test-dashboard-pom-dashboard": "npx cypress run --browser chrome --spec cypress/integration/advancedExamples/*.js --headless --record --key $record_key",
-    "test-dashboard-examples-dashboard": "npx cypress run --browser chrome --spec cypress/integration/examples/*.js --headless --record --key $record_key"
+    "test-cucumber": "npx cypress run --browser chrome --spec cypress/integration/BDD/features/shoppingTest.feature --headed",
+    "test-ts-examples": "npx cypress run --browser chrome --spec cypress/integration/*/*.ts --headed",
+    "test-dashboard-samples": "npx cypress run --browser chrome --spec cypress/integration/POMExamples_ts/homepageTestsTS.ts --headless --record --key $record_key"
   },
   "cypress-cucumber-preprocessor": {
     "stepDefinitions": [
@@ -34,14 +32,13 @@
   },
   "homepage": "https://github.com/honguyenit/cypress-demo#readme",
   "devDependencies": {
+    "@badeball/cypress-cucumber-preprocessor": "^20.1.2",
+    "@bahmutov/cypress-esbuild-preprocessor": "^2.2.2",
     "@cypress/browserify-preprocessor": "^3.0.2",
     "cypress": "^13.13.2",
     "cypress-iframe": "^1.0.1",
     "cypress-mochawesome-reporter": "^3.8.2",
     "multiple-cucumber-html-reporter": "^3.7.0",
     "typescript": "^5.5.4"
-  },
-  "dependencies": {
-    "@badeball/cypress-cucumber-preprocessor": "^20.1.1"
   }
 }

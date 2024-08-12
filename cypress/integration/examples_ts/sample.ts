@@ -17,7 +17,7 @@ describe('add to cart test ts', () => {
         })
 
         // verify logo text with non-cypress .text() method
-        cy.get('.greenLogo').should('have.text', 'GREENKART1')
+        cy.get('.greenLogo').should('have.text', 'GREENKART')
         cy.get('.greenLogo').then(function(logoEl){
             const logoText = logoEl.text()
             cy.log('logoText:' + logoText)
