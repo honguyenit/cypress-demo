@@ -12,7 +12,7 @@
 // -- This is a parent command --
 // Cypress.Commands.add('login', (email, password) => { ... })
 
-Cypress.Commands.add('selectProductByName', (productName) => { 
+Cypress.Commands.add('selectProductByName', (productName: string) => { 
     cy.log("selectProductByName")
     cy.get("h4.card-title").each((el, index, list)=>{
         if(el.text().includes(productName)){

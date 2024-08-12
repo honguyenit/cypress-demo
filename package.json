@@ -16,7 +16,7 @@
   },
   "cypress-cucumber-preprocessor": {
     "stepDefinitions": [
-      "cypress/integration/BDD/step_definitions/*.js"
+      "cypress/integration/BDD/step_definitions/*.ts"
     ],
     "json": {
       "enabled": true,
@@ -35,10 +35,11 @@
   "homepage": "https://github.com/honguyenit/cypress-demo#readme",
   "devDependencies": {
     "@cypress/browserify-preprocessor": "^3.0.2",
-    "cypress": "^13.6.4",
+    "cypress": "^13.13.2",
     "cypress-iframe": "^1.0.1",
     "cypress-mochawesome-reporter": "^3.8.2",
-    "multiple-cucumber-html-reporter": "^3.7.0"
+    "multiple-cucumber-html-reporter": "^3.7.0",
+    "typescript": "^5.5.4"
   },
   "dependencies": {
     "@badeball/cypress-cucumber-preprocessor": "^20.1.1"

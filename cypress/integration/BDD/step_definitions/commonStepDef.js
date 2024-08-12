@@ -1,15 +1,15 @@
-/// <reference types="Cypress" />
+// /// <reference types="Cypress" />
 
-import {Given} from "@badeball/cypress-cucumber-preprocessor"
-import HomePage from "../../POMExamples/pageObjects/HomePage"
+// import {Given} from "@badeball/cypress-cucumber-preprocessor"
+// // import HomePage from "../../POMExamples/pageObjects/HomePage"
 
 
-const homePage = new  HomePage()
+// const homePage = new  HomePage()
 
-Given ('I open the home page', function() {
-    cy.visit(Cypress.env('baseURL') + "/angularpractice")
-})
+// Given ('I open the home page', function() {
+//     cy.visit(Cypress.env('baseURL') + "/angularpractice")
+// })
 
-Given ('I select the shopping page menu', () => {
-    homePage.getShopLinkMenuEl().click()
-})
+// Given ('I select the shopping page menu', () => {
+//     homePage.getShopLinkMenuEl().click()
+// })
