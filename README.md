@@ -43,5 +43,5 @@
     Note that a results.json will be generated after executing tests
 
 - Generate cucumber report (after running cucumber tests)
-    From the root folder, execute the command: 
+    From the root folder, execute the command below: 
     - `node cucumber-html-reporter.js`
